@@ -1,0 +1,271 @@
+
+
+<!doctype html>
+
+
+<html>
+    <head>
+        <title>Admission Prediction</title>
+        <style>
+        *{
+          margin:0;
+          padding:0;
+        }
+        body{
+            background-image: url('static/images/double-bubble-dark.png');
+        
+            background-position: center;
+            background-size:cover;
+            font-family:sans-serif;
+            margin-top:40px;
+        }
+        .regform{
+        left:310px;
+        top:-37px;
+            position:relative;
+            width:800px;
+            background-color:rgb(0,0,0,0.6)
+            margin:auto;
+            color:white;
+            padding: 10px 0px 10px 0px;
+            text-align:center;
+            border-radius:15px 15px 0px 0px
+            }
+            .regform1{
+        left:100px;
+        top:-37px;
+            position:relative;
+            width:800px;
+            background-color:rgb(0,0,0,0.6)
+            margin:auto;
+            color:white;
+            padding: 10px 0px 10px 0px;
+            text-align:center;
+            border-radius:15px 15px 0px 0px
+            }
+        .main{
+        background-color:rgb(0,0,00.5)
+        color:white;
+        width:800px;
+        margin:auto;
+        }
+        form{
+        color:white;
+        padding:10px;
+        }
+        .name{
+        margin-left:25px;
+        margin-top:30px;
+        width:125px;
+        color:white;
+        font-size:18px;
+        }
+        .Gre{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        }
+        .TOEFL{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        }
+        .University{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        }
+        .SOP{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        }
+        .Jobtitle{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        color:white;
+        }
+        .LOR{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        }
+        .CGPA{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        }
+        .research{
+        position:relative;
+        left:200px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        }
+        .button{
+        position:relative;
+        left:310px;
+        top:-37px;
+        background-color:#3BAF9F;
+        display:block;
+        margin: 40px 0px 0px 0px 40px;
+        text-align: center;
+        border: 2px solid #366473;
+        border-radius:12px;
+        padding:14px 110px;
+        outline:none;
+        color:white;
+        cursor:pointer;
+        transition:0 .25px;
+        }
+        .button1{
+        position:relative;
+        left:310px;
+        top:-37px;
+        background-color:#3BAF9F;
+        display:block;
+        margin: 40px 0px 0px 0px 40px;
+        text-align: center;
+        border: 2px solid #366473;
+        border-radius:12px;
+        padding:14px 110px;
+        outline:none;
+        color:white;
+        cursor:pointer;
+        transition:0 .25px;
+        }
+        .result{
+        position:relative;
+        left:220px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        color: yellow;
+        }
+        .result1{
+        position:relative;
+        left:220px;
+        top:-37px;
+        line-height:40px;
+        width:480px;
+        border-radius:6px;
+        padding:0 22px;
+        font-size:16px;
+        color: yellow;
+        }
+        
+        .resume{
+        position:relative;
+        left:160px;
+        top:-37px;
+        height: 150px;
+        width: 700px;
+        line-height: 150%;
+        resize:vertical;
+        }
+        
+        
+        
+        
+
+        </style>
+    </head>
+    
+    <body>
+    <div class='regform'> <h1>Please enter scores to predict your chances of admission at the universities</h1></div>
+    <div class='main'>
+    <form action="{{url_for('predict')}}"method = "post">
+    <div id='name'>
+    <h2 class='Gre'>Enter your GRE scores out of 340</h2>
+    <input class='Gre' type = 'number' name = 'GRE' min="1" max="340"><br>
+    </div>
+    <h2 class='TOEFL'>Enter your TOEFL scores out of 120</h2>
+    <input class='TOEFL' type = 'number' name = 'TOEFL' min="1" max="120">
+    
+    <h2 class='University'>Enter ranking of the university out of 5</h2>
+    <input class='University Rating' type = 'number' name = 'University Rating'min="1" max="5">
+    
+    <h2 class='SOP'>Enter your SOP scores out of 5</h2>
+    <input class='SOP' type = 'double' name = 'SOP' min="1" max="5">
+    
+    <h2 class='LOR'>Enter your LOR scores out of 5</h2>
+    <input class='LOR' type = 'double' name = 'LOR' min="1" max="5">
+    
+    <h2 class='CGPA'>Enter CGPA out of 10</h2>
+    <input class='CGPA' type = 'double' name = 'CGPA' min="1" max="10">
+    
+    <h2 class='research'>Are you a research student? Enter 1 for YES and 0 for NO</h2>
+    <input class='research' type = 'number' name = 'research' min="0" max="1"><br><br>
+    <h2 class='result'>{{ prediction_text }}</h2>
+ 
+    
+    <button type = "submit" class = "button"> Predict</button>
+    
+    
+    </form>
+    
+    
+    <form2 action="{{url_for('predict2')}}" method = "post" >
+    <div class='regform1'> <h1>Please enter your qualifications for job titles</h1></div>
+  
+    <h2 class='Jobtitle'>Please enter your qualifications</h2>
+    
+    
+    <textarea name="resume" class="resume"></textarea>
+    
+    <h2 class='result1'>{{ prediction_text2 }}</h2>
+    
+    
+    <button type = "submit1" class = "button1"> Suggestions for job titles</button>
+    
+    </form2>
+    
+    
+    </div>
+    </body>
+</html>
+    
+    
+    
