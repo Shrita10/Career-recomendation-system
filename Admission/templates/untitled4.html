@@ -196,7 +196,7 @@
         color: yellow;
         }
         
-        .resume{
+        .resume1{
         position:relative;
         left:160px;
         top:-37px;
@@ -247,20 +247,20 @@
     </form>
     
     
-    <form2 action="{{url_for('predict2')}}" method = "post" >
+    <form action="{{url_for('predict2')}}" method = "post" >
     <div class='regform1'> <h1>Please enter your qualifications for job titles</h1></div>
   
     <h2 class='Jobtitle'>Please enter your qualifications</h2>
     
     
-    <textarea name="resume" class="resume"></textarea>
+    <textarea name="resume" class="resume1" rows="4" cols="50" ></textarea>
     
     <h2 class='result1'>{{ prediction_text2 }}</h2>
     
     
-    <button type = "submit1" class = "button1"> Suggestions for job titles</button>
+    <button type = "submit" class = "button1"> Suggestions for job titles</button>
     
-    </form2>
+    </form>
     
     
     </div>

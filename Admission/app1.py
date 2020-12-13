@@ -41,9 +41,13 @@ def predict():
 @app.route('/predict2',methods = ['POST'])
 def predict2():
     ''' For results on HTML GUI'''
-    input_text = [le2.transform([x]) if x.isalpha() else int(x) for x in request.form2.values() ]
-    vec_text = vectorizer.transform(input_text)
+    
+    input_text = request.form['resume']
+    
+    #input_text = [le2.transform([x]) if x.isalpha() else int(x) for x in request.form.values() ]
+    vec_text = vectorizer.transform([input_text])
     output2 = model2.predict(vec_text)
+    output2 = le2.inverse_transform(output2)
     
     
     return render_template('untitled4.html',prediction_text2 = 'The recommended job title:  {} %'.format(output2))
