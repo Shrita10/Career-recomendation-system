@@ -47,10 +47,12 @@ def predict2():
     #input_text = [le2.transform([x]) if x.isalpha() else int(x) for x in request.form.values() ]
     vec_text = vectorizer.transform([input_text])
     output2 = model2.predict(vec_text)
-    output2 = le2.inverse_transform(output2)
+    output2 = le2.inverse_transform([output2])
+    output2 = output2[0]
     
     
-    return render_template('untitled4.html',prediction_text2 = 'The recommended job title:  {} %'.format(output2))
+    
+    return render_template('untitled4.html',prediction_text2 = 'The recommended job title:  {} '.format(output2))
 
 if __name__ == "__main__":
     app.run(debug=True)
