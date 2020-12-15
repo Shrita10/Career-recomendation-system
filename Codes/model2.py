@@ -8,7 +8,7 @@ Created on Sun Dec 13 09:33:12 2020
 import pandas as pd
 import pickle
 pd.options.display.max_columns = 500
-df1 = pd.read_csv('C:\\Users\\Shrita\\Desktop\\Admission\\job_rec.csv')
+df1 = pd.read_csv('C:\\Users\\Shrita\\Desktop\\Career-recomendation-system\\Codes\\job_rec.csv')
 df1 = df1[df1['IT'] == True]
 col = ['RequiredQual', 'Eligibility', 'Title', 'JobDescription', 'JobRequirment']
 df1 = df1[col]

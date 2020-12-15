@@ -9,7 +9,7 @@ import pandas as pd
 import pickle
 
 
-df1 = pd.read_csv('C:\\Users\\Shrita\\Desktop\\Admission\\ad_pr.csv')
+df1 = pd.read_csv('C:\\Users\\Shrita\\Desktop\\Career-recomendation-system\\Codes\\ad_pr.csv')
 df1 = df1.drop('Serial No.',axis = 1)
 X10 = df1.drop(['Chance of Admit'], axis=1)
 y10 = df1['Chance of Admit']

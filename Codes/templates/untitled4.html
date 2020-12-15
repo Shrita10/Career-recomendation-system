@@ -20,7 +20,7 @@
             margin-top:40px;
         }
         .regform{
-        left:100px;
+        left:5px;
         top:-37px;
             position:relative;
             width:800px;
@@ -273,24 +273,24 @@
         }
         .result{
         position:relative;
-        left:1100px;
+        left:150px;
         top:-37px;
         line-height:40px;
         width:480px;
         border-radius:6px;
         padding:0 22px;
-        font-size:16px;
+        font-size:23px;
         color: yellow;
         }
         .result1{
         position:relative;
-        left:180px;
+        left:150px;
         top:-37px;
         line-height:40px;
         width:480px;
         border-radius:6px;
         padding:0 22px;
-        font-size:16px;
+        font-size:23px;
         color: yellow;
         }
         
@@ -299,10 +299,10 @@
         border:5px solid #3BAF9F;
         border-radius:20px;
         position:relative;
-        left:45px;
+        left:130px;
         top:-37px;
         height: 150px;
-        width: 700px;
+        width: 520px;
         line-height: 150%;
         resize:vertical;
         color: white;
@@ -319,14 +319,14 @@
     <div class='main'>
     
     <form action="{{url_for('predict2')}}" method = "post" >
-    <div class='regform1'> <h2>Please enter your qualifications for job titles</h2></div>
+    <div class='regform1'> <h2>To determine the best job suggestions, please enter your resume.</h2></div>
   
     <h2 class='Jobtitle'>Please enter your qualifications</h2>
     
     
     <textarea name="resume" class="resume1" rows="4" cols="50" ></textarea>
     
-    <h2 class='result1'>{{ prediction_text2 }}</h2>
+    <h1 class='result1'>{{ prediction_text2 }}</h1>
     
     
     <button type = "submit" class = "button1"> Suggestions for job titles</button>
@@ -335,7 +335,7 @@
     
     
     <form action="{{url_for('predict')}}"method = "post">
-    <div class='regform'> <h2>Please enter scores to predict your chances of admission at the universities</h2></div>
+    <div class='regform'> <h2>To predict your chances of admission to universities, please enter scores</h2></div>
     
     <div id='name'>
     <h2 class='Gre1'>Enter your GRE scores out of 340</h2>
@@ -344,8 +344,8 @@
     <h2 class='TOEFL1'>Enter your TOEFL scores out of 120</h2>
     <input class='TOEFL' type = 'number' name = 'TOEFL' min="1" max="120">
     
-    <h2 class='University1'>Enter ranking of the university out of 5</h2>
-    <input class='University Rating' type = 'number' name = 'University Rating'min="1" max="5">
+    <h2 class='University1'>Enter ranking of the desired university out of 5</h2>
+    <input class='University Rating' type = 'double' name = 'University Rating'min="1" max="5">
     
     <h2 class='SOP1'>Enter your SOP scores out of 5</h2>
     <input class='SOP' type = 'double' name = 'SOP' min="1" max="5">
@@ -358,7 +358,7 @@
     
     <h2 class='research1'>Are you a research student? Enter 1 for YES and 0 for NO</h2>
     <input class='research' type = 'number' name = 'research' min="0" max="1"><br><br>
-    <h2 class='result'>{{ prediction_text }}</h2>
+    <h1 class='result'>{{ prediction_text }}</h1>
 
     <button type = "submit" class = "button"> Predict</button>
     

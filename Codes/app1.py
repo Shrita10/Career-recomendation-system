@@ -36,7 +36,7 @@ def predict():
     prediction = prediction*100
     output = round(prediction[0],2)
     
-    return render_template('untitled4.html',prediction_text = 'The chances of your admission at the university are  {} %'.format(output))
+    return render_template('untitled4.html',prediction_text = 'According to the inputs, the likelihood of your university admission is {} %.'.format(output))
 
 @app.route('/predict2',methods = ['POST'])
 def predict2():
@@ -52,7 +52,7 @@ def predict2():
     
     
     
-    return render_template('untitled4.html',prediction_text2 = 'The recommended job title:  {} '.format(output2))
+    return render_template('untitled4.html',prediction_text2 = 'The suggested job title is {}, according to the qualifications entered.'.format(output2))
 
 if __name__ == "__main__":
     app.run(debug=True)
