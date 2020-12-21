@@ -31,6 +31,17 @@
             text-align:center;
             border-radius:15px 15px 0px 0px
             }
+            .adm_result{
+        left:5px;
+        top:-37px;
+            width:800px;
+            background-color:rgb(0,0,0,0.6)
+            margin:auto;
+            color:white;
+            padding: 10px 0px 10px 0px;
+            text-align:center;
+            border-radius:15px 15px 0px 0px
+            }
             .regform1{
         left:10px;
         top:-37px;
@@ -60,7 +71,7 @@
         color:white;
         font-size:18px;
         }
-        .Gre{
+        .adm_button{
         background-color: #000;
         border:5px solid #3BAF9F;
         border-radius:20px;
@@ -68,85 +79,13 @@
         left:122px;
         top:-37px;
         line-height:40px;
-        width:480px;
+        width:300px;
         border-radius:6px;
         padding:0 22px;
         font-size:16px;
         color:white;
         }
-        .Gre1{
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        }
-        .TOEFL{
-        background-color: #000;
-        border:5px solid #3BAF9F;
-        border-radius:20px;
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        color:white;
-        }
-        .TOEFL1{
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        }
-        .University{
-        background-color: #000;
-        border:5px solid #3BAF9F;
-        border-radius:20px;
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        color:white;
-        }
-        .University1{
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        }
-        .SOP{
-        background-color: #000;
-        border:5px solid #3BAF9F;
-        border-radius:20px;
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        color:white;
-        }
-        .SOP1{
+        .adm_label{
         position:relative;
         left:122px;
         top:-37px;
@@ -166,78 +105,6 @@
         padding:0 22px;
         font-size:16px;
         color:white;
-        }
-        .LOR{
-        background-color: #000;
-        border:5px solid #3BAF9F;
-        border-radius:20px;
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        color:white;
-        }
-        .LOR1{
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        }
-        .CGPA{
-        background-color: #000;
-        border:5px solid #3BAF9F;
-        border-radius:20px;
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        color:white;
-        }
-        .CGPA1{
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        }
-        .research{
-        background-color: #000;
-        border:5px solid #3BAF9F;
-        border-radius:20px;
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
-        color:white;
-        }
-        .research1{
-        position:relative;
-        left:122px;
-        top:-37px;
-        line-height:40px;
-        width:480px;
-        border-radius:6px;
-        padding:0 22px;
-        font-size:16px;
         }
         .button{
         position:relative;
@@ -273,7 +140,7 @@
         }
         .result{
         position:relative;
-        left:150px;
+        left:250px;
         top:-37px;
         line-height:40px;
         width:480px;
@@ -301,21 +168,26 @@
         position:relative;
         left:130px;
         top:-37px;
-        height: 150px;
+        height: 70px;
         width: 520px;
         line-height: 150%;
         resize:vertical;
         color: white;
         }
         
-        
+        .inline-block-child{
+
+  display: inline-block;
+  padding: 10px;
+  vertical-align: top;
+}
         
         
 
         </style>
     </head>
-    
     <body>
+    <div class='holder'>
     <div class='main'>
     
     <form action="{{url_for('predict2')}}" method = "post" >
@@ -330,43 +202,52 @@
     
     
     <button type = "submit" class = "button1"> Suggestions for job titles</button>
-    
-    </form>
-    
-    
-    <form action="{{url_for('predict')}}"method = "post">
-    <div class='regform'> <h2>To predict your chances of admission to universities, please enter scores</h2></div>
-    
-    <div id='name'>
-    <h2 class='Gre1'>Enter your GRE scores out of 340</h2>
-    <input class='Gre' type = 'number' name = 'GRE' min="1" max="340"><br>
     </div>
-    <h2 class='TOEFL1'>Enter your TOEFL scores out of 120</h2>
-    <input class='TOEFL' type = 'number' name = 'TOEFL' min="1" max="120">
+    </form> 
+<center><div class='regform'> <h2>To predict your chances of admission to universities, please enter scores</h2></div></center>
+   <div class="login">
+   
+    <form action="{{url_for('predict')}}"method = "post">
     
-    <h2 class='University1'>Enter ranking of the desired university out of 5</h2>
-    <input class='University Rating' type = 'double' name = 'University Rating'min="1" max="5">
+    <div class="child inline-block-child"> 
+    <h2 class='adm_label'>Enter your GRE scores out of 340</h2>
+    <input class='adm_button' type = 'number' name = 'GRE' min="1" max="340"><br>
+ 
+    <h2 class='adm_label'>Enter your TOEFL scores out of 120</h2>
+    <input class='adm_button' type = 'number' name = 'TOEFL' min="1" max="120">
     
-    <h2 class='SOP1'>Enter your SOP scores out of 5</h2>
-    <input class='SOP' type = 'double' name = 'SOP' min="1" max="5">
+    <h2 class='adm_label'>Enter ranking of the desired university out of 5</h2>
+    <input class='adm_button' type = 'double' name = 'University Rating'min="1" max="5">
     
-    <h2 class='LOR1'>Enter your LOR scores out of 5</h2>
-    <input class='LOR' type = 'double' name = 'LOR' min="1" max="5">
-    
-    <h2 class='CGPA1'>Enter CGPA out of 10</h2>
-    <input class='CGPA' type = 'double' name = 'CGPA' min="1" max="10">
-    
-    <h2 class='research1'>Are you a research student? Enter 1 for YES and 0 for NO</h2>
-    <input class='research' type = 'number' name = 'research' min="0" max="1"><br><br>
-    <h1 class='result'>{{ prediction_text }}</h1>
+<h2 class='adm_label'>Enter your SOP scores out of 5</h2>
+    <input class='adm_button' type = 'double' name = 'SOP' min="1" max="5">
+    </div>
 
-    <button type = "submit" class = "button"> Predict</button>
+<div class="child inline-block-child" style= "text-align:right">     
+    <center>
+    <h2 class='adm_label'>Enter your LOR scores out of 5</h2>
+    <input class='adm_button' type = 'double' name = 'LOR' min="1" max="5">
     
+    <h2 class='adm_label'>Enter CGPA out of 10</h2>
+    <input class='adm_button' type = 'double' name = 'CGPA' min="1" max="10">
     
+    <h2 class='adm_label'>Are you a research student?</h2>
+    <center><input class='radio' id="yes" value="yes" type="radio" name="options" >
+<label class='radio_lab' for="yes">Yes</label>
+<input class='radio' id="no" value="no" type="radio" name="options" >
+<label class='radio_lab' for="no">No</label>
+    </center>
+    </center>
+    </div>
+     </div>
+     <div class='adm_result'>
+    <center><h1 class='result'>{{ prediction_text }}</h1></center>
+
+    <center><button type = "submit" class = "button"> Predict</button></center>
+    <div>
     </form>
-    
-    
-    
+
+   
     </div>
     </body>
 </html>

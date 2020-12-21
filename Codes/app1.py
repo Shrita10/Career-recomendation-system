@@ -16,8 +16,6 @@ le2 = pickle.load(open('le2.pkl','rb'))
 vectorizer = pickle.load(open('vectorizer.pkl','rb'))
 model2 = pickle.load(open('model2.pkl','rb'))
 
-
-
 @app.route('/')
 
 def home():
@@ -29,9 +27,14 @@ def predict():
     ''' For results on HTML GUI'''
     
     
-    int_features = [float(x) for x in request.form.values() ]
-
-    final_features = [np.array(int_features)]
+    int_features = [x for x in request.form.values() ]
+    option = request.form['options']
+    if option == 'Yes':
+        int_features[6] = 1
+    else:
+        int_features[6] = 0
+    final_features = [float(x) for x in int_features]
+    final_features = [np.array(final_features)]
     prediction = model1.predict(final_features)
     prediction = prediction*100
     output = round(prediction[0],2)
@@ -49,8 +52,6 @@ def predict2():
     output2 = model2.predict(vec_text)
     output2 = le2.inverse_transform([output2])
     output2 = output2[0]
-    
-    
     
     return render_template('untitled4.html',prediction_text2 = 'The suggested job title is {}, according to the qualifications entered.'.format(output2))
 
